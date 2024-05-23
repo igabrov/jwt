@@ -1,5 +1,8 @@
 package com.example;
 
+import com.example.generate.GenerateTokenForClames;
+import com.example.validate.ValidateToken;
+
 /**
  * Hello world!
  *
@@ -10,9 +13,10 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-        GenerateToken generateToken = new GenerateToken();
+        // GenerateToken generateToken = new GenerateToken();
+        GenerateTokenForClames generateToken = new GenerateTokenForClames();
         ValidateToken validateToken = new ValidateToken();
-        String jwt = generateToken.generate(KEY);
+        String jwt = generateToken.generate(KEY, generateToken.getClames());
         validateToken.validate(jwt, KEY);
     }
 }

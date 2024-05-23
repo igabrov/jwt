@@ -1,4 +1,4 @@
-package com.example;
+package com.example.validate;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;

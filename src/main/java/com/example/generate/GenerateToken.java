@@ -1,4 +1,4 @@
-package com.example;
+package com.example.generate;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
