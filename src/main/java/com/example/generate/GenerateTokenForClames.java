@@ -8,20 +8,21 @@ import io.jsonwebtoken.security.Keys;
 
 public class GenerateTokenForClames {
   public String generate (String key, Map<String,?> clames) {
-    System.out.println("GenerateToken for Clames:" + clames);
+    System.out.println("GenerateToken for Clames:\n" + clames);
     JwtBuilder builder = Jwts.builder()
       .subject("myTestUserId");
     
     for (Map.Entry<String,?> entry : clames.entrySet()) {  
       builder.claim(entry.getKey(), entry.getValue());
-      System.out.println("Key = " + entry.getKey() + 
-                       ", Value = " + entry.getValue());  
+      // System.out.println("Key = " + entry.getKey() + 
+      //                  ", Value = " + entry.getValue());  
     }
     
     String jwt = builder
       .signWith(Keys.hmacShaKeyFor(key.getBytes()), Jwts.SIG.HS256)
       .compact();
       System.out.println("JWT:\n" + jwt);
+      System.out.println( "====================================" );
     return jwt;
   }
 
